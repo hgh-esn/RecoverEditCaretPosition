@@ -102,12 +102,12 @@ class plgSystemRecEditCarPos extends JPlugin
 
 	  	$getCarPosTxtarea  = ' onclick="getCarPos()" ';			
 	  	$class='class="button-apply btn btn-success"';			
-	  	$body_new = str_replace($class, $getCarPosTxtarea .$class, $match[0]);   // Für edit  			
 
 	/* ----------------------------------
 	 * do the change: 
 	 * Put the onClick event before class
-	 * ---------------------------------- */
+ 	 * ---------------------------------- */
+		$body_new = str_replace($class, $getCarPosTxtarea .$class, $match[0]);   // Für edit  		
 		$html = str_replace($match[0], $body_new, $html);
 
 	/* ----------------------------------
