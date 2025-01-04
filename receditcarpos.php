@@ -84,7 +84,7 @@ class plgSystemRecEditCarPos extends JPlugin
 
 	//J3    $html = JResponse::getBody();
 	/*J4*/	$html = JFactory::getApplication()->getBody();
-		//	echo htmlentities($html);
+	//	echo htmlentities($html);
 	/* ----------------------------------
 	 * get only the body code in match[0]
 	 * ---------------------------------- */
@@ -95,9 +95,10 @@ class plgSystemRecEditCarPos extends JPlugin
 	/* ----------------------------------
 	 * set some work variables
 	 *
-	 * Note: The oncl-variable contains the name
+	 * Note: The getCarPosTxtarea-variable contains the name
 	 * of the javascript-funktion to get and save
 	 * the clicked position within the list
+  	 * 
 	 * ---------------------------------- */
 
 	  	$getCarPosTxtarea  = ' onclick="getCarPos()" ';			
