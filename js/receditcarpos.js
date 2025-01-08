@@ -20,7 +20,7 @@
 function getDocPos() {
 
 	// window.scrollto(0,400);
-    alert('getDocPos: pageXOffset: ' + window.pageXOffset + ', pageYOffset: ' + window.pageYOffset);  
+    	alert('getDocPos: pageXOffset: ' + window.pageXOffset + ', pageYOffset: ' + window.pageYOffset);  
 	   
 	var bvalue = window.pageYOffset;
 	var exdays = 1;
@@ -46,6 +46,9 @@ function getCookie(name) {
 	var name = name + '=';
 	var ca = document.cookie.split(';');
 	alert('getCookie: ca= ' +ca);
+	/*****************************************
+ 	 * iterate threu the qookie-array
+   	 *****************************************/
 	for (var i=0; i<ca.length; i++) {
 		var c = ca[i];
 		while (c.charAt(0)==' ') c = c.substring(1);
@@ -57,14 +60,16 @@ function getCookie(name) {
 	return '';
 }
 	
-	function delete_cookie(name) {
-		document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-	}
-	
+function delete_cookie(name) {
+	document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+// Aufruf   http://dailydevbook.de/2013/01/24/javascript-caret-position-setzen-und-auslesen
+//
 // var pos = getCaretPos(document.getElementById('myId')); // pure JS
 // var pos = getCaretPos($('#myId')[0], 10);  // jQuery
-
-// Definition   http://dailydevbook.de/2013/01/24/javascript-caret-position-setzen-und-auslesen/
+//
+// Definition
 function getCaretPos(domElem) {
 	var pos ='';
 	alert('Fkt-getCaretPos');
@@ -84,16 +89,15 @@ function getCaretPos(domElem) {
 			alert('Fkt-getCaretPos: pos-domElem.selectionStart ' +pos);
 		}
 	}
-//	pos=200;
+//	pos=200;    // for testing only
 	alert('getCaretPos-Return ' +pos);
 	return pos;
 }
 
-// Aufruf
+// Aufruf   http://dailydevbook.de/2013/01/24/javascript-caret-position-setzen-und-auslesen/
 // setCaretPos(document.getElementById('myId'), 10); // pure JS
 // setCaretPos($('#myId')[0], 10);  // jQuery
-
-// Definition   http://dailydevbook.de/2013/01/24/javascript-caret-position-setzen-und-auslesen/
+// Definition
 function setCaretPos(domElem, pos) {
 	alert('Fkt: setCaretPos');
 	if(domElem.setSelectionRange) {
@@ -139,7 +143,8 @@ function getCarPos() {
 		alert('Qookie geladen: ' +posValue);   
 			
 		//window.scrollTo(0, posValue);
-		setCaretPos('jform_articletext', posValue);
+		setCaretPos(document.getElementById('jform_articletext'), posValue)
+	//	setCaretPos('jform_articletext', posValue);
 	};
 	return;
  }
